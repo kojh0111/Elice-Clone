@@ -1,9 +1,14 @@
-import './App.css';
+import styled from "styled-components";
+import CourseCard from "./components/CourseCard";
 
-function App() {
+const Container = styled.div`
+  background-color: #f0f1f3;
+`;
+
+export default function App() {
   return (
-    <div className="App"></div>
+    <Container>
+      <CourseCard />
+    </Container>
   );
 }
-
-export default App;
