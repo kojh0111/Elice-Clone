@@ -1,19 +1,30 @@
+import { useState } from "react";
 import styled from "styled-components";
 import CourseCard from "./components/CourseCard";
 import TrackCard from "./components/TrackCard";
+import Tab from "./components/Tab";
 
 const Container = styled.div`
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  min-width: 1232px;
+  width: 90vw;
+  height: 100vh;
+  margin: auto;
+  padding-top: 100px;
 `;
 
 export default function App() {
+  const [currTab, setCurrTab] = useState("트랙");
+
+  const handleClickTab = (tab) => {
+    setCurrTab(tab);
+  };
   return (
     <Container>
-      <CourseCard />
-      <TrackCard />
+      <Tab currTab={currTab} onClick={handleClickTab} />
+      {currTab === "트랙" ? <CourseCard /> : <TrackCard />}
     </Container>
   );
 }
