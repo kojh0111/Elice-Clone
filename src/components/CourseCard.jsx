@@ -49,15 +49,15 @@ export default function CourseCard({
       <Card.Features>
         <Card.Feature>
           <Chart />
-          <Card.Text>난이도:{level}</Card.Text>
+          <Card.Text>난이도: {level}</Card.Text>
         </Card.Feature>
         <Card.Feature>
           <Computer />
-          <Card.Text>수업:{classFormat}</Card.Text>
+          <Card.Text>수업: {classFormat}</Card.Text>
         </Card.Feature>
         <Card.Feature>
           <Calendar />
-          <Card.Text>기간:{duration}</Card.Text>
+          <Card.Text>기간: {duration}</Card.Text>
         </Card.Feature>
       </Card.Features>
       <Card.Languages>

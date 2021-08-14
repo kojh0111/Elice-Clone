@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CourseCard from "./components/CourseCard";
+import TrackCard from "./components/TrackCard";
 
 const Container = styled.div`
   height: 100vh;
@@ -12,7 +13,7 @@ export default function App() {
   return (
     <Container>
       <CourseCard />
-      <CourseCard isFree={true} />
+      <TrackCard />
     </Container>
   );
 }
