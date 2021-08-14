@@ -7,4 +7,4 @@
 - [x] 탭
 - [ ] 검색창
 - [ ] 페이지네이션
-- [ ] API Response와 연동하기
+- [x] API Response와 연동하기
