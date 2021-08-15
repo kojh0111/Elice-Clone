@@ -8,6 +8,7 @@ const TabContainer = styled.div`
 `;
 
 const EachTab = styled.p`
+  cursor: pointer;
   font-size: 14px;
   line-height: 22px;
   color: #151618;

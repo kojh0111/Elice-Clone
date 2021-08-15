@@ -4,6 +4,7 @@ import CourseCard from "./components/CourseCard";
 import TrackCard from "./components/TrackCard";
 import Tab from "./components/Tab";
 import axios from "axios";
+import Pagination from "./components/Pagination";
 
 const Container = styled.div`
   display: flex;
@@ -31,6 +32,9 @@ export default function App() {
   const [totalCardCount, setTotalCardCount] = useState(0);
 
   const handleClickTab = (tab) => {
+    if (tab !== currTab) {
+      setCurrPage(0);
+    }
     setCurrTab(tab);
   };
 
@@ -43,7 +47,6 @@ export default function App() {
         const trackUrl = `${API_END_POINT}track/list/?offset=${offset}&count=6`;
 
         const response = await axios.get(trackUrl);
-        console.log(response);
         setTotalCardCount(response.data.track_count);
         setCardData(response.data.tracks);
       }
@@ -55,7 +58,6 @@ export default function App() {
         const courseUrl = `${API_END_POINT}course/list/?offset=${offset}&count=8`;
 
         const response = await axios.get(courseUrl);
-        console.log(response);
         setTotalCardCount(response.data.course_count);
         setCardData(response.data.courses);
       }
@@ -78,6 +80,11 @@ export default function App() {
           ))}
         </CardContainer>
       )}
+      <Pagination
+        currPage={currPage}
+        pageCount={Math.ceil(totalCardCount / (currTab === "트랙" ? 6 : 8))}
+        onClickPage={setCurrPage}
+      />
     </Container>
   );
 }
